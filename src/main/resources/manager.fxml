@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinyu.controller.managerController">
+  <tabs>
+    <Tab text="修改员工信息">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="searchField" layoutX="97.0" layoutY="47.0" promptText="请输入员工ID" />
+                  <Button fx:id="search" layoutX="36.0" layoutY="47.0" mnemonicParsing="false" onAction="#searchWorker" text="查询" />
+                  <Button fx:id="addButton" layoutX="453.0" layoutY="318.0" mnemonicParsing="false" onAction="#add" text="添加" />
+                  <Button fx:id="deleteWorker" layoutX="523.0" layoutY="318.0" mnemonicParsing="false" onAction="#deleteWorker" text="删除" />
+                  <Button fx:id="modifyButton" layoutX="389.0" layoutY="318.0" mnemonicParsing="false" onAction="#modify" text="修改" />
+                  <TableView fx:id="workerShow" layoutX="76.0" layoutY="85.0" prefHeight="200.0" prefWidth="498.0">
+                    <columns>
+                      <TableColumn fx:id="workerId" prefWidth="62.4000244140625" text="员工ID" />
+                      <TableColumn fx:id="workerName" prefWidth="67.20001220703125" text="姓名" />
+                        <TableColumn fx:id="workerSex" prefWidth="53.5999755859375" text="性别" />
+                        <TableColumn fx:id="workerPosition" prefWidth="46.4000244140625" text="职位" />
+                        <TableColumn fx:id="departmentId" prefWidth="72.0" text="部门号" />
+                        <TableColumn fx:id="workerAddress" prefWidth="84.800048828125" text="住址" />
+                        <TableColumn fx:id="phoneNumber" prefWidth="113.59991455078125" text="联系电话" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="returnToLogin" layoutX="21.0" layoutY="318.0" mnemonicParsing="false" onAction="#reToLogin" text="返回登录界面" />
+                  <Button fx:id="reFresh" layoutX="534.0" layoutY="45.0" mnemonicParsing="false" onAction="#reFresh" prefHeight="25.0" prefWidth="40.0" text="刷新" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="查询流水单">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="roomIdField" layoutX="37.0" layoutY="48.0" prefHeight="23.0" prefWidth="84.0" promptText="房号" />
+                  <Button fx:id="chargeSearchButton" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#chargeSearch" text="查询" />
+                  <Label layoutX="91.0" layoutY="91.0" text="房号">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="roomLabel" layoutX="134.0" layoutY="93.0" prefHeight="15.0" prefWidth="42.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="195.0" layoutY="91.0" text="缴纳月份">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="chargeDateLabel" layoutX="269.0" layoutY="93.0" prefHeight="18.0" prefWidth="86.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="373.0" layoutY="91.0" text="业主">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="ownerLabel" layoutX="420.0" layoutY="93.0" prefHeight="18.0" prefWidth="66.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="63.0" layoutY="315.0" text="收费日期">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label layoutX="331.0" layoutY="317.0" text="员工号">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="dateLabel" layoutX="136.0" layoutY="317.0" prefHeight="15.0" prefWidth="146.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="idLabel" layoutX="397.0" layoutY="317.0" prefHeight="15.0" prefWidth="54.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <TextField fx:id="chargeDateField" layoutX="129.0" layoutY="48.0" prefHeight="23.0" prefWidth="128.0" promptText="收费日期 例2020-02" />
+                  <Label layoutX="345.0" layoutY="278.0" text="合计">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalLabel" layoutX="397.0" layoutY="278.0" prefHeight="19.0" prefWidth="82.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="125.0" text="序列">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="178.0" layoutY="125.0" text="缴纳类型">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="125.0" text="数量">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="408.0" layoutY="125.0" text="金额">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="101.0" layoutY="156.0" text="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="101.0" layoutY="185.0" text="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="219.0" text="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="248.0" text="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="188.0" layoutY="156.0" text="物业费">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="188.0" layoutY="185.0" text="电梯费">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="195.0" layoutY="219.0" text="水费">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="195.0" layoutY="248.0" text="电费">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wuyeNumber" layoutX="292.0" layoutY="156.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="diantiNumber" layoutX="292.0" layoutY="185.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="waterNumber" layoutX="292.0" layoutY="219.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dianNumber" layoutX="292.0" layoutY="248.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wuyeMoney" layoutX="397.0" layoutY="156.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="diantiMoney" layoutX="397.0" layoutY="185.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="waterMoney" layoutX="397.0" layoutY="219.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dianMoney" layoutX="397.0" layoutY="248.0" prefHeight="19.0" prefWidth="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

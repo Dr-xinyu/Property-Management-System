@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xinyu.entity">
+    <class name="Department" table="Department" dynamic-insert="true" dynamic-update="true">
+        <!--2、配置实体类id 和表的Id 对应
+        hibernate 要求实体类有一个属性唯一值
+        表有字段为唯一值 column 是表的字段名字
+
+        -->
+        <id name="department_id" column="department_id">
+            <generator class="assigned"></generator>
+        </id>
+        <!--配置其他属性和表字段对应 -->
+        <property name="department_name" column="department_name"></property>
+        <property name="department_phone" column="department_phone"></property>
+
+        <!--        在业主文件中，表示所有房屋
+                    使用set标签表示。
+                    set标签中的属性：属性值写客户实体类中表示房屋的set集合名字
+        -->
+        <set name="people" cascade="delete,save-update">
+            <!--            一对多建表。多的那方会有外键。但是，hibernate机制是：双向维护外键。在一和多的一方都配置外键
+                            column属性值: 外键名称
+            -->
+            <key column="dId"></key>
+            <!--            业主所有的房屋：class里面写房屋实体类全路径-->
+            <one-to-many class="People"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

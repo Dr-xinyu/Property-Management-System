@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="201.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinyu.controller.modifyWorkerController">
+   <children>
+      <Label layoutX="127.0" layoutY="14.0" text="修改员工信息">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choicebox" layoutX="26.0" layoutY="101.0" prefWidth="150.0" />
+      <TextField fx:id="newField" layoutX="199.0" layoutY="101.0" prefHeight="23.0" prefWidth="144.0" promptText="新的内容" />
+      <Button fx:id="configButton" layoutX="223.0" layoutY="152.0" mnemonicParsing="false" onAction="#config" text="确认" />
+      <Button fx:id="returnButton" layoutX="305.0" layoutY="152.0" mnemonicParsing="false" onAction="#cancel" text="返回" />
+      <Label layoutX="26.0" layoutY="68.0" text="员工ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idField" layoutX="81.0" layoutY="66.0" prefHeight="23.0" prefWidth="94.0" promptText="员工ID" />
+   </children>
+</AnchorPane>

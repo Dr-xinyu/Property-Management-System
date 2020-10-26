@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xinyu.entity">
+    <class name="Room" table="Room">
+        <!--2、配置实体类id 和表的Id 对应
+        hibernate 要求实体类有一个属性唯一值
+        表有字段为唯一值 column 是表的字段名字
+
+        -->
+        <id name="room_id" column="room_id">
+        </id>
+        <!--配置其他属性和表字段对应 -->
+        <property name="room_area" column="room_area"></property>
+        <!--表示房屋所属业主
+            name属性: 因为在房屋实体中使用Owner对象。写Owner名称
+            class属性：Owner全路径
+            column：外键名称
+        -->
+        <many-to-one name="owner" class="Owner" column="Oid"></many-to-one>
+
+    </class>
+</hibernate-mapping>
